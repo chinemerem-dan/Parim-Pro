@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parim Pro – Registration</title>
+
+  
+ 
+<link rel="stylesheet" href="/css/register.css">
+ 
+</head>
+<body>
+  <div class="logo-div"><img src="/images/logo2.png" alt="" class="logo-box"></div>
+
+  <div class="form-container">
+
+
+    <form id="registerForm" class="overlay">
+      
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="fullname" />
+        <p class="error" id="nameError">Full name is required</p>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" />
+        <p class="error" id="phoneError">Phone number is required</p>
+      </div>
+
+      <div class="form-group">
+        <label>Create Password</label>
+        <input type="password" id="password" />
+        <p class="error" id="passwordError">Password is required</p>
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="confirm" />
+        <p class="error" id="confirmError">Passwords do not match</p>
+      </div>
+
+     <div class="button-div">
+       <button type="submit" class="button">Sign Up</button>
+      <p class="footer-text">
+      Already have a Parim Pay Account?
+      <a href="home.html">Login</a>
+    </p>
+     </div>
+    </form>
+
+  </div>
+ 
+  <script src="/js/register.js">
+    
+  </script>
+
+</body>
+</html>
