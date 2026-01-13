@@ -14,14 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ================== DOM ELEMENTS ================== */
 const modal = document.getElementById("modal");
 const openModal = document.getElementById("openModal");
 const closeModal = document.getElementById("closeModal");
 const addEventBtn = document.getElementById("addEvent");
 const tableBody = document.getElementById("eventTable");
 
-/* ================== MODAL LOGIC ================== */
+// MODAL LOGIC/
 openModal.addEventListener("click", () => {
   modal.style.display = "block";
 });
@@ -30,7 +29,7 @@ closeModal.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-/* ================== STATUS LOGIC ================== */
+//STATUS LOGIC 
 function getStatus(startTime, endTime) {
   const now = new Date();
   const start = new Date(startTime);
@@ -41,7 +40,7 @@ function getStatus(startTime, endTime) {
   return { text: "Done", class: "done" };
 }
 
-/* ================== RENDER EVENTS ================== */
+// RENDER EVENTS /
 function renderEvents(events) {
   tableBody.innerHTML = "";
 
@@ -68,7 +67,7 @@ function renderEvents(events) {
   });
 }
 
-/* ================== FETCH EVENTS ================== */
+// FETCH EVENTS
 async function loadEvents() {
   try {
     const res = await fetch("/api/events", {
@@ -86,7 +85,7 @@ async function loadEvents() {
   }
 }
 
-/* ================== CREATE EVENT ================== */
+//CREATE EVENT
 addEventBtn.addEventListener("click", async () => {
   const name = document.getElementById("eventName").value.trim();
   const startTime = document.getElementById("eventDate").value;
@@ -134,7 +133,7 @@ addEventBtn.addEventListener("click", async () => {
   }
 });
 
-/* ================== AUTO UPDATE STATUS ================== */
+//AUTO UPDATE STATUS 
 function updateStatuses() {
   document.querySelectorAll("#eventTable tr").forEach(row => {
     const startTime = row.dataset.start;
@@ -153,4 +152,4 @@ function updateStatuses() {
 // Update every minute
 setInterval(updateStatuses, 60000);
 
-/* ================== INITIAL LOAD ================== */
+

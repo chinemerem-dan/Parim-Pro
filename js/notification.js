@@ -1,6 +1,5 @@
-/* =========================
-   DATA SOURCE (FROM BACKEND LATER)
-========================= */
+// DATA SOURCE (FROM BACKEND LATER)
+
 
 const notifications = [
   {
@@ -28,18 +27,15 @@ const notifications = [
     read: true
   }
 ];
-
-/* =========================
-   GLOBAL STATE
-========================= */
+//global state
 
 const container = document.getElementById("notificationContainer");
 const markAllBtn = document.getElementById("markAll");
 let activeNotificationId = null;
 
-/* =========================
-   TIME CATEGORY ENGINE
-========================= */
+
+  // TIME CATEGORY ENGINE
+
 
 function getTimeCategory(timestamp) {
   const now = Date.now();
@@ -56,14 +52,12 @@ function getTimeCategory(timestamp) {
   return "Earlier";
 }
 
-/* =========================
-   RENDER ENGINE
-========================= */
+// render
 
 function renderNotifications() {
   container.innerHTML = "";
 
-  /* ---------- DETAIL VIEW ---------- */
+  // DETAIL VIEW 
   if (activeNotificationId !== null) {
     const notif = notifications.find(n => n.id === activeNotificationId);
     if (!notif) return;
@@ -89,7 +83,7 @@ function renderNotifications() {
     return;
   }
 
-  /* ---------- LIST VIEW ---------- */
+//list view
   const grouped = {};
 
   notifications.forEach(n => {
@@ -120,9 +114,7 @@ function renderNotifications() {
   });
 }
 
-/* =========================
-   OPEN / CLOSE HANDLERS
-========================= */
+//open and close handles
 
 function openNotification(id) {
   const notif = notifications.find(n => n.id === id);
@@ -131,34 +123,28 @@ function openNotification(id) {
   notif.read = true;
   activeNotificationId = id;
 
-  // 🔴 BACKEND CALL
+  //  BACKEND CALL
   // fetch(`/api/notifications/${id}/read`, { method: "POST" });
 
   renderNotifications();
 }
 
-/* =========================
-   MARK ALL AS READ
-========================= */
+// mark as read
 
 markAllBtn.onclick = () => {
   notifications.forEach(n => (n.read = true));
 
-  // 🔴 BACKEND CALL
+  //  BACKEND CALL
   // fetch("/api/notifications/read-all", { method: "POST" });
 
   renderNotifications();
 };
+//initial load
 
-/* =========================
-   INITIAL LOAD
-========================= */
 
 renderNotifications();
 
-/* =========================
-   LIVE TIME UPDATE (SAFE)
-========================= */
+//live time update
 
 setInterval(() => {
   // Prevent auto refresh while reading a message

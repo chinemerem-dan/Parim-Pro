@@ -16,7 +16,30 @@ body {
     background: #620A45 url("/images/c42c1d31b55fc6c02a8c5843b86024bcff88ff5d.jpg") center/cover no-repeat; 
   color: #fff;
 }
+/* PASSWORD EYE TOGGLE */
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 65%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  font-size: 1rem;
 
+}
+
+.toggle-password:hover {
+  color: #620A45;
+}
+
+/* SUCCESS MESSAGE */
+.success-text {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #2e7d32;
+}
 .hero .overlay {
   position: absolute;
   inset: 0;
@@ -41,10 +64,6 @@ body {
   gap: 10px;
   margin-left: -300px;
   font-family:url;
-  margin-top: -150px;
- 
-  
-  
 }
 .hero h1 {
   font-size: 2rem;
@@ -195,24 +214,22 @@ button:hover {
   border-radius: 4px;
 }
 
-.eye-icon {
-  position: absolute;
-  right: 8px;
-  top: 60%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 16px;
-  color: #666;
-  user-select: none;
-}
 
-.eye-icon:hover {
-  color: #000;
-}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  
+  .logo {
+ 
+  gap: 10px;
+  margin-left: -20px;
+  margin-top: -100px;
+
+ 
+}
+.hero{
+  height: 50vh;
+}
+
 .hero h1 {
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -230,6 +247,11 @@ margin-top: -50px;
   margin-left: 50px;
   margin-right: 50px;
 }
+.image-section{
+  height: 40vh;
+}
+
+
   .steps {
     gap: 20px;
   }

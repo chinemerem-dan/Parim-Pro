@@ -21,44 +21,63 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  
+  padding: 1.5rem;  
 }
 
-/* ===== FORM WRAPPER ===== */
+/* FORM WRAPPER  */
 .overlay {
   width: 100%;
   max-width: 420px;
 }
 
-/* ===== LOGO ===== */
+/* LOGO */
 .logo-div {
   display: flex;
   justify-content: center;
-  margin-bottom: -8rem;
+  margin-bottom: -8.2rem;
   text-align: center;
+  
   
 }
 .button-div{
   text-align: center;
 }
 .logo-div img{
-  margin-top: -50px;
+  margin-top: -250px;
   width: 200px;
+  padding-top: 70px;
+  
+  
 }
 .logo-box {
   width: 180px;
   height: auto;
 }
+.form-message {
+  display: none;
+  text-align: center;
+  margin: 10px auto 15px;
+  font-size: 0.85rem;
+  max-width: 420px;
+}
 
-/* ===== FORM GROUP ===== */
+.form-message.error {
+  color: #e74c3c;
+}
+
+.form-message.success {
+  color: #2ecc71;
+}
+
+
+/*  FORM GROUP */
 .form-group {
   margin-bottom: 1rem;
   
   
 }
 
-/* ===== LABEL ===== */
+/*  LABEL*/
 label {
   display: block;
   margin-bottom: 0.4rem;
@@ -67,7 +86,7 @@ label {
   color: #fff;
 }
 
-/* ===== INPUT ===== */
+/* INPUT */
 input {
   width: 100%;
   padding: 0.65rem 0.8rem;
@@ -84,8 +103,30 @@ input:focus {
 input.error-input {
   border-color: #e74c3c;
 }
+/* PASSWORD WRAPPER */
+.password-wrapper {
+  position: relative;
+}
 
-/* ===== ERROR ===== */
+.password-wrapper input {
+  padding-right: 2.5rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.toggle-password:hover {
+  color: #620A45;
+}
+
+/*  ERROR */
 .error {
   font-size: 0.7rem;
   color: #e74c3c;
@@ -93,10 +134,10 @@ input.error-input {
   display: none;
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON*/
 .button {
   width: 40%;
-  margin-top: 2rem;
+  
   padding: 0.75rem;
   border-radius: 10px;
   border: none;
@@ -113,10 +154,10 @@ input.error-input {
   color: #fff;
 }
 
-/* ===== FOOTER ===== */
+/*  FOOTER */
 .footer-text {
   text-align: center;
-  margin-top: 1.6rem;
+  margin-top: 0.6rem;
   font-size: 0.8rem;
   color: #fff;
 }
@@ -130,14 +171,8 @@ input.error-input {
   
 }
 
-/* ===========================
-   TABLET (≥768px)
-=========================== */
+/* Responsive*/
 @media (max-width: 768px) {
-
-
- 
-
 
 .logo-div img{
   margin-top: -200px;
@@ -146,7 +181,7 @@ input.error-input {
 }
 
 .form-container{
-  margin-top:112px;
+  margin-top:20px;
 }
  
 }
