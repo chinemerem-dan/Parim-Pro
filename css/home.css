@@ -20,7 +20,7 @@ body {
 .toggle-password {
   position: absolute;
   right: 15px;
-  top: 65%;
+  top:55%;
   transform: translateY(-50%);
   cursor: pointer;
   color: #555;
@@ -143,7 +143,14 @@ margin-top: -50px;
   height: 80vh;
   
 }
-
+.forgotPassword{
+  margin-left: 420px;
+  margin-bottom: 15px;
+}
+.forgotPassword:hover{
+  color:#620A45;
+  cursor: pointer;
+}
 form {
   max-width: 600px;
   margin: auto;
@@ -153,7 +160,7 @@ form {
 input {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   margin-top: 15px;
   border: none;
   
@@ -209,7 +216,7 @@ button:hover {
 
 .input-group input {
   width: 100%;
-  padding: 12px 42px 12px 12px; /* space for eye */
+  padding: 12px 42px 12px 12px; 
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -250,7 +257,11 @@ margin-top: -50px;
 .image-section{
   height: 40vh;
 }
-
+.forgotPassword{
+  margin-left: 200px;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
 
   .steps {
     gap: 20px;

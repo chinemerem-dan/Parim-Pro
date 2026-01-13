@@ -2,7 +2,6 @@
 const BASE_URL = "https://parim-backendapi-0lfo.onrender.com";
 const REGISTER_ADMIN_URL = `${BASE_URL}/api/auth/register-admin`;
 
-
 const registerForm = document.getElementById("registerForm");
 const formMessage = document.getElementById("formMessage");
 
@@ -10,7 +9,7 @@ const formMessage = document.getElementById("formMessage");
 const fullName = document.getElementById("fullname");
 const mail = document.getElementById("mail");
 const phone = document.getElementById("phone");
-const password = document.getElementById("password");
+const createPassword = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm");
 const role = document.getElementById("role");
 
@@ -18,7 +17,7 @@ const role = document.getElementById("role");
 const nameError = document.getElementById("nameError");
 const mailError = document.getElementById("maillError");
 const phoneError = document.getElementById("phoneError");
-const passwordError = document.getElementById("passwordError");
+const createPasswordError = document.getElementById("passwordError");
 const confirmError = document.getElementById("confirmError");
 const roleError = document.getElementById("roleError");
 
@@ -58,7 +57,7 @@ function isValidEmail(email) {
   [fullName, nameError],
   [mail, mailError],
   [phone, phoneError],
-  [password, passwordError],
+  [createPassword, createPasswordError],
   [confirmPassword, confirmError],
   [role, roleError],
 ].forEach(([input, errorEl]) => {
@@ -107,12 +106,12 @@ registerForm.addEventListener("submit", async (e) => {
     valid = false;
   }
 
-  if (password.value.length < 6) {
-    showInputError(password, passwordError);
+  if (createPassword.value.length < 6) {
+    showInputError(createPassword, createPasswordError);
     valid = false;
   }
 
-  if (confirmPassword.value !== password.value) {
+  if (confirmPassword.value !== createPassword.value) {
     showInputError(confirmPassword, confirmError);
     valid = false;
   }
@@ -129,13 +128,13 @@ registerForm.addEventListener("submit", async (e) => {
     fullName: fullName.value.trim(),
     mail: mail.value.trim(),
     phoneNumber: phone.value.trim(),
-    createPassword: password.value,
+    createPassword: createPassword.value,
     confirmPassword: confirmPassword.value,
     role: role.value.trim(),
   };
 
   try {
-    showFormMessage("Creating your account...", "success");
+    showFormMessage("Creating your account...", "info");
 
     const response = await fetch(REGISTER_ADMIN_URL, {
       method: "POST",
@@ -144,41 +143,25 @@ registerForm.addEventListener("submit", async (e) => {
     });
 
     const data = await response.json();
+    console.log(data);
 
+    const msg = (data.message || "").toLowerCase();
+    
     // for backend errors
     if (!response.ok) {
-      const msg = (data.message || "").toLowerCase();
-
-      if (msg.includes("email")) {
-        showInputError(mail, mailError, "Email already exists");
-      }
-
-      if (msg.includes("phone")) {
-        showInputError(phone, phoneError, "Phone number already exists");
-      }
-
-      if (!msg.includes("email") && !msg.includes("phone")) {
-        showFormMessage(data.message || "Registration failed", "error");
-      }
-
+      showFormMessage(msg);
       return;
     }
 
-    // for successful registration, otp geneartion and and redirecting
-    showFormMessage(
-      "Registration successful! OTP has been sent to your email.",
-      "success"
-    );
+    // for successful registration, otp generation  and redirecting
+    showFormMessage(msg,"success");
 
     registerForm.reset();
 
     setTimeout(() => {
-      window.location.href = "otp.html";
+      // window.location.href = "otp.html";
     }, 1500);
   } catch (error) {
-    showFormMessage(
-      "Network error. Please check your internet connection.",
-      "error"
-    );
+    showFormMessage(data.error.details);
   }
 });
