@@ -1,16 +1,9 @@
-// menu icon navigation
+const toggleBtn = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.sidebar');
 
-const menuIcon = document.getElementById('menuIcon');
 
-// Add a click event listener to the icon
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.getElementById("menuBtn");
-
-  if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
-      window.location.href = "nav.html";
-    });
-  }
+toggleBtn.addEventListener('click',()=>{
+window.location.href= "/dashboard.html";
 });
 
 

@@ -1,22 +1,11 @@
+const toggleBtn = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.sidebar');
 
 
-// menu icon navigation
-
-const menuIcon = document.getElementById('menuIcon');
-
-// Add a click event listener to the icon
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.getElementById("menuBtn");
-
-  if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
-      window.location.href = "nav.html";
-    });
-  }
+toggleBtn.addEventListener('click',()=>{
+sidebar.classList.toggle('active');
 });
 
-
-//backend configure
 // Change these URLs when backend is ready
 const API = {
   dashboard: "/api/dashboard",
@@ -26,13 +15,35 @@ const API = {
   qr: "/api/qr"
 };
 
-//dom
+/* -------------------------
+   DOM REFERENCES
+-------------------------- */
 const searchInput = document.querySelector(".search input");
 const notificationIcon = document.querySelector(".hero-icons span");
 
+/* -------------------------
+   MOCK DATA (REMOVE LATER)
+-------------------------- */
+const mockData = {
+  dashboard: {
+    totalEvents: 347,
+    totalStaff: 447,
+    analysis: 447,
+    training: 147
+  },
+  attendance: {
+    rate: "91%",
+    checkedIn: 230,
+    late: 50,
+    absent: 20,
+    onTime: 200
+  },
+  qrValue: "https://parimpro.com/event/tech-conference-2026"
+};
 
-
-//load dashboard
+/* -------------------------
+   LOAD DASHBOARD DATA
+-------------------------- */
 function loadDashboard() {
   /*
     BACKEND VERSION:
@@ -76,8 +87,9 @@ function renderAttendance(data) {
   boxes[3].querySelector("strong").textContent = data.onTime;
 }
 
-//   QR CODE (BACKEND)
-
+/* -------------------------
+   QR CODE (BACKEND)
+-------------------------- */
 function loadQRCode() {
   /*
     BACKEND VERSION:
@@ -109,7 +121,9 @@ searchInput.addEventListener("input", e => {
   console.log("Searching for:", query);
 });
 
-//notify backend
+/* -------------------------
+   NOTIFICATIONS (BACKEND)
+-------------------------- */
 notificationIcon.addEventListener("click", () => {
   /*
     BACKEND VERSION:
@@ -121,9 +135,9 @@ notificationIcon.addEventListener("click", () => {
   alert("Notifications (backend)");
 });
 
-/* 
+/* -------------------------
    INITIALIZE PAGE
- */
+-------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   loadDashboard();
   loadAttendance();

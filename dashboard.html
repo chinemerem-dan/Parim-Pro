@@ -1,117 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Parim Pro|Dashboard</title>
-
-<link rel="stylesheet" href="/parim-pro/css/dashboard.css">
+<link rel="stylesheet" href="/parim-pro/css/dashboard.css" />
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="hero-content">
 
-    <div class="hero-top">
-      <div class="logo">
-      <img src="/images/WhatsApp_Image_2026-01-03_at_5.58.52_PM-removebg-preview.png" alt="" style="width: 50%;">
-      </div>
-      <div class="hero-icons">
-        <span class="notification-icon"><img src="/images/Vector (5).png" alt=""></span>
-        <span><img src="/images/pajamas_profile (1).png" alt=""></span>
-       
-      </div>
-    </div>
-
-    <div class="user-row">
-      <div class="avatar">VE</div>
-      <div>
-        <strong>Valent Ekolisa</strong><br/>
-        <small>Adminstrator</small>
-      </div>
-    </div>
-
-    <div class="search">
-      <!-- BACKEND SEARCH -->
-      <a href="nav.html"><img src="/images/search-removebg-preview.png" alt="" class="search-icon"><p class="search-text" >  Search event, staff or training</p></a>
-       
-    </div>
-<div class="menu-icons"> <span id="menuBtn" ><img src="/images/menu_icon-removebg-preview.png" alt=""></span></div>
-  </div>
-</section>
+<!-- TOP HEADER -->
+<header class="top-header">
+<div class="header-left">
+<img src="/images/WhatsApp_Image_2026-01-03_at_5.58.52_PM-removebg-preview.png" class="logo" />
+</div>
+<div class="header-right">
+  <div class="menu-toggle"><img src="/images/Vector (6).png" alt=""></div>
+<img src="/images/Vector (5).png" class="icon" />
+<img src="/images/pajamas_profile (1).png" class="icon" />
+</div>
+</header>
 
 
+<div class="dashboard-wrapper">
+
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="user-info">
+<div class="avatar">VE</div>
+<h4>Valent Ekolisa</h4>
+<small>Administrator</small>
+</div>
+
+
+<ul class="nav-menu">
+<li class="active"><a href="/dashboard.html">Dashboard</a></li>
+<li><a href="/event.html">Events</a></li>
+<li><a href="/staff.html">Staff</a></li>
+<li><a href="/training.html">Training Library</a></li>
+<li><a href="/setting.html">Settings</a></li>
+<li class="/logout"><a href="#">Logout</a></li>
+</ul>
+</aside>
+
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+
+<!-- SEARCH -->
+<div class="search-box">
+<input type="text" placeholder="Search event, staff or training" />
+</div>
+
+
+<!-- STATS -->
 <section class="stats">
-  <div class="stat stat1">
-  <div class="stat-header">
-    <span class="stat-icon1"><img src="/images/Vector (8).png" alt=""></span>
-    
-  <span>Total Event</span> <span>147+12%</span></div>
-    <div class="analysis-icon"><span><img src="/images/uim_analysis.png" alt=""></span></div>
-  </div>
-  
- 
-</div>
-  <div class="stat stat2">
-  <div class="stat-header">
-    <span class="stat-icon2"><img src="/images/pajamas_profile.png" alt=""></span>
-    <span>Total Staff</span>
-     <span>147+12%</span>
-  </div>
-   <div class="analysis-icon"><span><img src="/images/uim_analysis.png" alt=""></span></div>
-</div>
-
-<div class="stat stat3">
-  <div class="stat-header">
-    <span class="stat-icon3"><img src="/images/ix_analysis.png" alt=""></span>
-    <span>Analysis</span>
-    <span>147+12%</span>
-  </div>
-    <div class="analysis-icon"><span><img src="/images/uim_analysis.png" alt=""></span></div>
-</div>
-
-<div class="stat stat4">
-  <div class="stat-header">
-    <span class="stat-icon4"><img src="/images/mdi_video-outline.png" alt=""></span>
-    <span>Training</span>
-     <span>147+12%</span>
-  </div>
-   <div class="analysis-icon"><span><img src="/images/uim_analysis.png" alt=""></span></div>
-</div>
-
+<div class="card pink "><img src="/images/Vector (8).png " alt="">Total Events <strong>147</strong></div>
+<div class="card"><img src="/images/pajamas_profile.png" class="green" alt="">Total Events <strong>147</strong></div>
+<div class="card blue"><img src="/images/ix_analysis.png">Total Events <strong>147</strong></div>
+<div class="card orange"><img src="/images/mdi_video-outline.png"class="orange" alt="">Total Events <strong>147</strong></div>
 </section>
 
+
+<!-- ATTENDANCE -->
 <section class="attendance">
-  <div><h2>Tech Conference 2026</h2>
-  <p>Real time attendance tracking</p>
-  <div class="attendance-rate">91% <p>Attendance rate</p></div></div>
-  <div><img src="/images/openmoji_mark.png" alt=""></div>
+<div>
+<h3>Tech Conference 2026</h3>
+<p>Real-time attendance tracking</p>
+</div>
+<div class="rate">91%</div>
 </section>
 
-<section class="grid">
-  
- 
- 
-  <div class="box green1"> <div><img src="/images/mdi_clock-outline.png" alt=""></div><div><p>Checked in<strong class="number-checked">230</strong><small>300 register</small></p></div></div>
- 
-  
-  <div class="box red1"><div><img src="/images/mdi_clock-outline.png" alt=""></div><div><p>Late<strong class="number-checked">50</strong ><small>300 register</small></p></div></div>
- 
-  <div class="box red2"><div><img src="/images/mdi_clock-outline.png" alt=""></div><div><p>Absent<strong class="number-checked" >20</strong><small>300 register</p></small></div></div>
- 
-  <div class="box green2"><div><img src="/images/mdi_clock-outline.png" alt=""></div><div><p>On time<strong class="number-checked">200</strong><small>300 register</p></small></div></div>
- <div class="qr">
-    <small>Tech Conference <p>2026 QR Code</p></small>
-    <!-- BACKEND QR -->
-    <img src="/images/Vector (9).png" alt="">
-  </div>
- 
+
+<!-- SUMMARY GRID -->
+<section class="summary-grid">
+<div class="box green"> <img src="/images/mdi_clock-outline.png" alt=""><span> Checked In <br>230</span> <small class="small" > 300 register</small></div>
+<div class="box red"> <img src="/images/mdi_clock-outline.png" alt=""><span> Checked In <br>230</span> <small class="small"> 300 register</small>  </div>
+<div class="box red"> <img src="/images/mdi_clock-outline.png" alt=""><span> Checked In <br>230</span> <small class="small"> 300 register</small></div>
+<div class="box green"> <img src="/images/mdi_clock-outline.png" alt=""><span> Checked In <br>230</span> <small class="small"> 300 register</small></div>
+<div class="qr">
+<p>Tech Conference 2026 <br>Qr Code</p>
+<img src="/images/Vector (9).png" />
+</div>
 </section>
 
-<footer>
-  All right reserved ©  <small>Parim Pro 2026</small>
-</footer>
+
+</main>
+</div>
+
+
+<footer class="footer">© Parim Pro 2026 </footer>
+
 <script src="/parim-pro/js/dashboard.js"></script>
 </body>
 </html>
