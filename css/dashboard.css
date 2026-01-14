@@ -44,7 +44,7 @@ text-align: center;
 }
 .notification-icon{
   position: absolute;
-  top: 21%;
+  top: 23%;
   right: 350px;
   width: -2px;
   
@@ -348,11 +348,15 @@ width: -20px;
     padding: 10px 14px;
   }
 .search a{
-  padding: 10px 10px 10px 10px;
+  padding: 10px 100px 10px 10px;
 }
 .search p {
   font-size: 10px;
   margin-right: 10px;
+}
+.search-icon {
+ 
+  width: 15px;
 }
   /* MENU ICONS */
   .menu-icons {
