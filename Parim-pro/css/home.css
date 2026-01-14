@@ -4,6 +4,21 @@
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
+/* PASSWORD WRAPPER */
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.toggle-password:hover {
+  color: #620A45;
+}
 
 body {
   background: #FFFF;
@@ -195,24 +210,20 @@ button:hover {
   border-radius: 4px;
 }
 
-.eye-icon {
-  position: absolute;
-  right: 8px;
-  top: 60%;
-  transform: translateY(-50%);
+
+.forgotPassword{
+  margin-left: 450px;
+  margin-bottom: 30px;
   cursor: pointer;
-  font-size: 16px;
-  color: #666;
-  user-select: none;
 }
-
-.eye-icon:hover {
-  color: #000;
+.forgotPassword:hover{
+  color: #620A45;
 }
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  
+  .hero{
+    height: 50vh;
+  }
 .hero h1 {
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -220,6 +231,18 @@ button:hover {
  
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: -10px;
+  font-family:url;
+  margin-top: -50px;
+  margin-bottom: 20px;
+ 
+  
+  
+}
 .hero p {
   font-size: 1.3rem;
   opacity: 0.9;
@@ -230,9 +253,42 @@ margin-top: -50px;
   margin-left: 50px;
   margin-right: 50px;
 }
+
+.step {
+  
+font-size: 10px;
+  
+}
+.step img{
+  width: 15px;
+}
+.step p{
+  font-size: 10px;
+}
   .steps {
     gap: 20px;
+   justify-content: center;
+   align-items: center;
   }
+  .step1{
+    margin-top: 1px;
+  }
+  .toggle-password {
+ 
+  top: 55%;
+
+}
+.forgotPassword{
+  margin-left: 200px;
+  margin-bottom: 30px;
+  font-size: 13px;
+  margin-top: -20px;
+}
+.image-section {
+ 
+  height: 50vh;
+}
+
   button {
   width: 60%;
   padding: 12px;

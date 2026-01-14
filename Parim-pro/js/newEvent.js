@@ -18,7 +18,7 @@ const errors = {
 let qrGenerated = false;
 let qrToken = "";
 
-/* ================= VALIDATION ================= */
+// VALIDATION 
 function validate() {
   let valid = true;
 
@@ -34,7 +34,7 @@ function validate() {
   return valid;
 }
 
-/* ================= QR CODE ================= */
+// qr code
 function generateQRCode(payload) {
   qrContainer.innerHTML = "";
   qrToken = btoa(JSON.stringify(payload)); // simple encoded token
@@ -47,8 +47,7 @@ function generateQRCode(payload) {
 
   qrGenerated = true;
 }
-
-/* ================= CREATE EVENT ================= */
+// create event
 document.getElementById("createBtn").addEventListener("click", () => {
   if (!validate()) return;
 

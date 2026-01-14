@@ -90,7 +90,18 @@ body {
   background: #620A45;
   color: #fff;
 }
-
+.resendOtp{
+  position: absolute;
+  top: 61%;
+  color: #fff;
+  left: 900px;
+}
+.resendOtp:hover{
+  padding: 2px;
+  color: #620A45;
+  
+  border: #d9d9d9 solid;
+}
 /* Messages */
 .error {
   color: red;
@@ -108,5 +119,14 @@ body {
 @media (max-width: 600px) {
   .otp-card {
     padding: 20px;
+    margin-top: 70px;
   }
+  .resendOtp{
+  position: absolute;
+  top: 68%;
+  color: #fff;
+  left: 230px;
+  font-size: 13px;
+
+}
 }

@@ -9,7 +9,7 @@ body {
   background-color: #fff;
 }
 
-/* ===== CONTAINER ===== */
+/*CONTAINER*/
 .form-container {
   
   width: 100%;
@@ -24,14 +24,36 @@ body {
   padding: 1.5rem;
   
 }
+/* PASSWORD WRAPPER */
+.password-wrapper {
+  position: relative;
+}
 
-/* ===== FORM WRAPPER ===== */
+.password-wrapper input {
+  padding-right: 2.5rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.toggle-password:hover {
+  color: #620A45;
+}
+
+/*  FORM WRAPPER  */
 .overlay {
   width: 100%;
   max-width: 420px;
 }
 
-/* ===== LOGO ===== */
+/* logo */
 .logo-div {
   display: flex;
   justify-content: center;
@@ -51,14 +73,14 @@ body {
   height: auto;
 }
 
-/* ===== FORM GROUP ===== */
+/* FORM GROUP */
 .form-group {
   margin-bottom: 1rem;
   
   
 }
 
-/* ===== LABEL ===== */
+/* LABEL */
 label {
   display: block;
   margin-bottom: 0.4rem;
@@ -67,7 +89,7 @@ label {
   color: #fff;
 }
 
-/* ===== INPUT ===== */
+/*INPUT*/
 input {
   width: 100%;
   padding: 0.65rem 0.8rem;
@@ -80,12 +102,15 @@ input {
 input:focus {
   border-color: #7b1b7e;
 }
-
+.form-message{
+  text-align: center;
+  font-size: 20px;
+}
 input.error-input {
   border-color: #e74c3c;
 }
 
-/* ===== ERROR ===== */
+/*ERROR*/
 .error {
   font-size: 0.7rem;
   color: #e74c3c;
@@ -93,7 +118,7 @@ input.error-input {
   display: none;
 }
 
-/* ===== BUTTON ===== */
+/*  BUTTON  */
 .button {
   width: 40%;
   margin-top: 2rem;
@@ -113,7 +138,7 @@ input.error-input {
   color: #fff;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER  */
 .footer-text {
   text-align: center;
   margin-top: 1.6rem;
@@ -130,14 +155,10 @@ input.error-input {
   
 }
 
-/* ===========================
+/* 
    TABLET (≥768px)
-=========================== */
+ */
 @media (max-width: 768px) {
-
-
- 
-
 
 .logo-div img{
   margin-top: -200px;
@@ -148,7 +169,11 @@ input.error-input {
 .form-container{
   margin-top:112px;
 }
- 
+ .form-message{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
 }
 
 

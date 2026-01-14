@@ -1,87 +1,168 @@
-const registerForm = document.getElementById('registerForm');
+// //api links
+// const BASE_URL = "https://parim-backendapi-0lfo.onrender.com";
+// const REGISTER_ADMIN_URL = `${BASE_URL}/api/auth/register-admin`;
 
-const fullname = document.getElementById('fullname');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
-const confirm = document.getElementById('confirm');
+// const registerForm = document.getElementById("registerForm");
+// const formMessage = document.getElementById("formMessage");
 
-const nameError = document.getElementById('nameError');
-const usernameError = document.getElementById('usernameError');
-const passwordError = document.getElementById('passwordError');
-const confirmError = document.getElementById('confirmError');
+// // Inputs
+// const fullName = document.getElementById("fullname");
+// const mail = document.getElementById("mail");
+// const phone = document.getElementById("phone");
+// const createPassword = document.getElementById("password");
+// const confirmPassword = document.getElementById("confirm");
+// const role = document.getElementById("role");
 
-function resetErrors() {
-  document.querySelectorAll('.error').forEach(e => {
-    e.textContent = '';
-    e.style.display = 'none';
-  });
-  document.querySelectorAll('input').forEach(i =>
-    i.classList.remove('error-input')
-  );
-}
+// // Error texts
+// const nameError = document.getElementById("nameError");
+// const mailError = document.getElementById("maillError");
+// const phoneError = document.getElementById("phoneError");
+// const createPasswordError = document.getElementById("passwordError");
+// const confirmError = document.getElementById("confirmError");
+// const roleError = document.getElementById("roleError");
 
-registerForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  resetErrors();
+// // Password toggles
+// const togglePassword1 = document.getElementById("togglePassword1");
+// const togglePassword2 = document.getElementById("togglePassword2");
 
-  let isValid = true;
+// //functions
+// function showFormMessage(message, type = "error") {
+//   formMessage.textContent = message;
+//   formMessage.className = `form-message ${type}`;
+//   formMessage.style.display = "block";
+//   formMessage.style.fontSize = "20px"
+// }
 
-  if (!fullname.value.trim()) {
-    nameError.textContent = 'Full name is required';
-    nameError.style.display = 'block';
-    isValid = false;
-  }
+// function clearFormMessage() {
+//   formMessage.textContent = "";
+//   formMessage.style.display = "none";
+// }
 
-  if (!username.value.trim()) {
-    usernameError.textContent = 'Username is required';
-    usernameError.style.display = 'block';
-    isValid = false;
-  }
+// function showInputError(input, errorEl, message) {
+//   if (message) errorEl.textContent = message;
+//   errorEl.style.display = "block";
+//   input.classList.add("error-input");
+// }
 
-  if (!password.value) {
-    passwordError.textContent = 'Password is required';
-    passwordError.style.display = 'block';
-    isValid = false;
-  } else if (password.value.length < 6) {
-    passwordError.textContent = 'Password must be at least 6 characters';
-    passwordError.style.display = 'block';
-    isValid = false;
-  }
+// function clearInputError(input, errorEl) {
+//   errorEl.style.display = "none";
+//   input.classList.remove("error-input");
+// }
 
-  if (!confirm.value) {
-    confirmError.textContent = 'Confirm your password';
-    confirmError.style.display = 'block';
-    isValid = false;
-  } else if (password.value !== confirm.value) {
-    confirmError.textContent = 'Passwords do not match';
-    confirmError.style.display = 'block';
-    isValid = false;
-  }
+// function isValidEmail(email) {
+//   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+// }
 
-  if (!isValid) return;
+// //for clearing error
+// [
+//   [fullName, nameError],
+//   [mail, mailError],
+//   [phone, phoneError],
+//   [createPassword, createPasswordError],
+//   [confirmPassword, confirmError],
+//   [role, roleError],
+// ].forEach(([input, errorEl]) => {
+//   input.addEventListener("input", () => {
+//     clearInputError(input, errorEl);
+//     clearFormMessage();
+//   });
+// });
 
-  /* ---------- API CALL ---------- */
-  fetch("http://localhost:5000/api/register", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      fullname: fullname.value.trim(),
-      username: username.value.trim().toLowerCase(),
-      password: password.value
-    })
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (!data.success) {
-        alert(data.message);
-        return;
-      }
+// //toggle code
+// function togglePassword(input, icon) {
+//   const isHidden = input.type === "password";
+//   input.type = isHidden ? "text" : "password";
+//   icon.classList.toggle("fa-eye");
+//   icon.classList.toggle("fa-eye-slash");
+// }
 
-      alert("Registration successful! You can now login.");
-      registerForm.reset();
-      // window.location.href = "login.html";
-    })
-    .catch(() => {
-      alert("Server error. Try again later.");
-    });
-});
+// togglePassword1.addEventListener("click", () =>
+//   togglePassword(password, togglePassword1)
+// );
+
+// togglePassword2.addEventListener("click", () =>
+//   togglePassword(confirmPassword, togglePassword2)
+// );
+
+// //form to submit
+// registerForm.addEventListener("submit", async (e) => {
+//   e.preventDefault();
+//   clearFormMessage();
+
+//   let valid = true;
+
+//   // validation logic
+//   if (!fullName.value.trim()) {
+//     showInputError(fullName, nameError);
+//     valid = false;
+//   }
+
+//   if (!mail.value.trim() || !isValidEmail(mail.value.trim())) {
+//     showInputError(mail, mailError, "Enter a valid email address");
+//     valid = false;
+//   }
+
+//   if (!phone.value.trim()) {
+//     showInputError(phone, phoneError);
+//     valid = false;
+//   }
+
+//   if (createPassword.value.length < 6) {
+//     showInputError(createPassword, createPasswordError);
+//     valid = false;
+//   }
+
+//   if (confirmPassword.value !== createPassword.value) {
+//     showInputError(confirmPassword, confirmError);
+//     valid = false;
+//   }
+
+//   if (!role.value.trim()) {
+//     showInputError(role, roleError);
+//     valid = false;
+//   }
+
+//   if (!valid) return;
+
+//   // matching the backend
+//   const payload = {
+//     fullName: fullName.value.trim(),
+//     mail: mail.value.trim(),
+//     phoneNumber: phone.value.trim(),
+//     createPassword: createPassword.value,
+//     confirmPassword: confirmPassword.value,
+//     role: role.value.trim(),
+//   };
+
+//   try {
+//     showFormMessage("Creating your account...", "info");
+
+//     const response = await fetch(REGISTER_ADMIN_URL, {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(payload),
+//     });
+
+//     const data = await response.json();
+//     console.log(data);
+
+//     const msg = (data.message || "").toLowerCase();
+    
+//     // for backend errors
+//     if (!response.ok) {
+//       showFormMessage(msg);
+//       return;
+//     }
+
+//     // for successful registration, otp generation  and redirecting
+//     showFormMessage(msg,"success");
+
+//     registerForm.reset();
+
+//     setTimeout(() => {
+//       // window.location.href = "otp.html";
+//     }, 1500);
+//   } catch (error) {
+//     showFormMessage(data.error.details);
+//   }
+// });

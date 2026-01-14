@@ -1,141 +1,93 @@
-// const form = document.getElementById("loginForm");
+// //api links
+// const BASE_URL = "https://parim-backendapi-0lfo.onrender.com";
+// const LOGIN_URL = `${BASE_URL}/api/auth/login`;
 
-// const usernameInput = document.getElementById("username");
+
+// const loginForm = document.getElementById("loginForm");
+
+// const emailInput = document.getElementById("email"); 
 // const passwordInput = document.getElementById("password");
 
-// const usernameError = document.getElementById("usernameError");
+// const emailError = document.getElementById("emailError");
 // const passwordError = document.getElementById("passwordError");
+// const loginSuccess = document.getElementById("loginSuccess");
 
-// /* ---------- HELPER FUNCTIONS ---------- */
-// function showError(input, errorElement, message) {
-//   input.style.border = "1px solid red";
-//   errorElement.textContent = message;
-// }
+// const togglePassword = document.getElementById("togglePassword");
 
-// function clearError(input, errorElement) {
-//   input.style.border = "none";
-//   errorElement.textContent = "";
-// }
+// // FOR PASSWORD TOGGLE
+// togglePassword.addEventListener("click", () => {
+//   const isHidden = passwordInput.type === "password";
+//   passwordInput.type = isHidden ? "text" : "password";
 
-// /* ---------- INPUT VALIDATION ---------- */
-// function validateUsername() {
-//   if (usernameInput.value.trim() === "") {
-//     showError(usernameInput, usernameError, "Username is required");
-//     return false;
-//   }
-//   clearError(usernameInput, usernameError);
-//   return true;
-// }
+//   togglePassword.classList.toggle("fa-eye");
+//   togglePassword.classList.toggle("fa-eye-slash");
+// });
 
-// function validatePassword() {
-//   if (passwordInput.value.trim() === "") {
-//     showError(passwordInput, passwordError, "Password is required");
-//     return false;
-//   }
-//   clearError(passwordInput, passwordError);
-//   return true;
-// }
+// //THIS CLEARS  ERRORS ON INPUT
+// [emailInput, passwordInput].forEach(input => {
+//   input.addEventListener("input", () => {
+//     input.classList.remove("input-error");
+//     emailError.textContent = "";
+//     passwordError.textContent = "";
+//     loginSuccess.textContent = "";
+//   });
+// });
 
-// /* ---------- REAL-TIME INPUT EVENTS ---------- */
-// usernameInput.addEventListener("input", validateUsername);
-// passwordInput.addEventListener("input", validatePassword);
-
-// /* ---------- FORM SUBMISSION ---------- */
-// form.addEventListener("submit", async (e) => {
+// //FOR SUBMISSION
+// loginForm.addEventListener("submit", async (e) => {
 //   e.preventDefault();
 
-//   const isUsernameValid = validateUsername();
-//   const isPasswordValid = validatePassword();
+//   const mail = emailInput.value.trim();
+//   const password = passwordInput.value.trim();
 
-//   if (!isUsernameValid || !isPasswordValid) return;
+//   let hasError = false;
+
+//   if (!mail) {
+//     emailError.textContent = "Email is required";
+//     emailInput.classList.add("input-error");
+//     hasError = true;
+//   }
+
+//   if (!password) {
+//     passwordError.textContent = "Password is required";
+//     passwordInput.classList.add("input-error");
+//     hasError = true;
+//   }
+
+//   if (hasError) return;
+
+//   const submitBtn = loginForm.querySelector("button");
+//   submitBtn.disabled = true;
+//   submitBtn.textContent = "Logging in...";
 
 //   try {
-//     const response = await fetch("http://localhost:5000/api/login", {
+//     const response = await fetch(LOGIN_URL, {
 //       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify({
-//         username: usernameInput.value.trim(),
-//         password: passwordInput.value.trim()
-//       })
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({ mail, password }),
 //     });
 
 //     const data = await response.json();
 
 //     if (!response.ok) {
-//       showError(passwordInput, passwordError, data.message);
-//       return;
+//       throw new Error(data.message || "Invalid login credentials");
 //     }
 
-//     // Save token
-//     localStorage.setItem("token", data.token);
+//    // FOR SUCCESFUL LOGIN
+//     localStorage.setItem("parim_token", data.token);
+//     localStorage.setItem("parim_user", JSON.stringify(data.user));
 
-//     alert("Login successful");
-//     // window.location.href = "dashboard.html";
+//     loginSuccess.textContent = "Login successful. Redirecting...";
+
+//     setTimeout(() => {
+//       window.location.href = "dashboard.html";
+//     }, 600);
 
 //   } catch (error) {
-//     showError(passwordInput, passwordError, "Server error. Try again.");
+//     passwordError.textContent = error.message;
+//     passwordInput.classList.add("input-error");
+//   } finally {
+//     submitBtn.disabled = false;
+//     submitBtn.textContent = "Login";
 //   }
 // });
-
-// const togglePassword = document.getElementById("togglePassword");
-
-// togglePassword.addEventListener("click", () => {
-//   if (passwordInput.type === "password") {
-//     passwordInput.type = "text";
-//     togglePassword.textContent = "🙈";
-//   } else {
-//     passwordInput.type = "password";
-//     togglePassword.textContent = "👁";
-//   }
-// });
-// const loginForm = document.getElementById('loginForm');
-// const togglePassword = document.getElementById('togglePassword');
-// const passwordInput = document.getElementById('loginPassword');
-
-/* ---------- PASSWORD TOGGLE ---------- */
-togglePassword.addEventListener('click', function () {
-  const isPassword = passwordInput.type === 'password';
-
-  passwordInput.type = isPassword ? 'text' : 'password';
-  togglePassword.classList.toggle('active');
-  togglePassword.textContent = isPassword ? '🙈' : '👁️';
-});
-
-/* ---------- LOGIN ---------- */
-loginForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const username = document
-    .getElementById('loginUsername')
-    .value.trim()
-    .toLowerCase();
-
-  const password = passwordInput.value;
-
-  if (!username || !password) {
-    alert("All fields are required");
-    return;
-  }
-
-  fetch("http://localhost:5000/api/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username, password })
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (!data.success) {
-        alert(data.message || "Invalid login");
-        return;
-      }
-
-      alert("Login successful");
-      localStorage.setItem("token", data.token);
-      // window.location.href = "dashboard.html";
-    })
-    .catch(() => {
-      alert("Server error. Try again later.");
-    });
-});
