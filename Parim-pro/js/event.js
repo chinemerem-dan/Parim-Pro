@@ -1,11 +1,9 @@
-const toggleBtn = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.sidebar');
+const toggleBtn = document.querySelector(".menu-toggle");
+const sidebar = document.querySelector(".sidebar");
 
-
-toggleBtn.addEventListener('click',()=>{
-window.location.href= "/dashboard.html";
+toggleBtn.addEventListener("click", () => {
+  window.location.href = "/dashboard.html";
 });
-
 
 const modal = document.getElementById("modal");
 const openModal = document.getElementById("openModal");
@@ -15,21 +13,22 @@ const tableBody = document.getElementById("eventTable");
 
 // MODAL LOGIC/
 openModal.addEventListener("click", () => {
-  modal.style.display = "block";
+  window.location.href = "/newEvent.html";
 });
 
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-//STATUS LOGIC 
+//STATUS LOGIC
 function getStatus(startTime, endTime) {
   const now = new Date();
   const start = new Date(startTime);
   const end = new Date(endTime);
 
   if (now < start) return { text: "In Future", class: "future" };
-  if (now >= start && now <= end) return { text: "In Progress", class: "progress" };
+  if (now >= start && now <= end)
+    return { text: "In Progress", class: "progress" };
   return { text: "Done", class: "done" };
 }
 
@@ -37,7 +36,7 @@ function getStatus(startTime, endTime) {
 function renderEvents(events) {
   tableBody.innerHTML = "";
 
-  events.forEach(event => {
+  events.forEach((event) => {
     const status = getStatus(event.startTime, event.endTime);
 
     const row = document.createElement("tr");
@@ -65,8 +64,8 @@ async function loadEvents() {
   try {
     const res = await fetch("/api/events", {
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token") || ""}`
-      }
+        Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
+      },
     });
 
     if (!res.ok) throw new Error("Failed to fetch events");
@@ -100,15 +99,15 @@ addEventBtn.addEventListener("click", async () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("token") || ""}`
+        Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
       },
       body: JSON.stringify({
         name,
         startTime,
         endTime,
         location,
-        attendees
-      })
+        attendees,
+      }),
     });
 
     if (!res.ok) throw new Error("Failed to create event");
@@ -126,9 +125,9 @@ addEventBtn.addEventListener("click", async () => {
   }
 });
 
-//AUTO UPDATE STATUS 
+//AUTO UPDATE STATUS
 function updateStatuses() {
-  document.querySelectorAll("#eventTable tr").forEach(row => {
+  document.querySelectorAll("#eventTable tr").forEach((row) => {
     const startTime = row.dataset.start;
     const endTime = row.dataset.end;
 
@@ -144,5 +143,3 @@ function updateStatuses() {
 
 // Update every minute
 setInterval(updateStatuses, 60000);
-
-

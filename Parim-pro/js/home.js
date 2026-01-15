@@ -2,10 +2,9 @@
 const BASE_URL = "https://parim-backendapi-0lfo.onrender.com";
 const LOGIN_URL = `${BASE_URL}/api/auth/login`;
 
-
 const loginForm = document.getElementById("loginForm");
 
-const emailInput = document.getElementById("email"); 
+const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 
 const emailError = document.getElementById("emailError");
@@ -24,7 +23,7 @@ togglePassword.addEventListener("click", () => {
 });
 
 //THIS CLEARS  ERRORS ON INPUT
-[emailInput, passwordInput].forEach(input => {
+[emailInput, passwordInput].forEach((input) => {
   input.addEventListener("input", () => {
     input.classList.remove("input-error");
     emailError.textContent = "";
@@ -73,7 +72,7 @@ loginForm.addEventListener("submit", async (e) => {
       throw new Error(data.message || "Invalid login credentials");
     }
 
-   // FOR SUCCESFUL LOGIN
+    // FOR SUCCESFUL LOGIN
     localStorage.setItem("parim_token", data.token);
     localStorage.setItem("parim_user", JSON.stringify(data.user));
 
@@ -82,7 +81,6 @@ loginForm.addEventListener("submit", async (e) => {
     setTimeout(() => {
       window.location.href = "/dashboard.html";
     }, 600);
-
   } catch (error) {
     passwordError.textContent = error.message;
     passwordInput.classList.add("input-error");

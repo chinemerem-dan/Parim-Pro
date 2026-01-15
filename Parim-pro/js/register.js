@@ -30,7 +30,7 @@ function showFormMessage(message, type = "error") {
   formMessage.textContent = message;
   formMessage.className = `form-message ${type}`;
   formMessage.style.display = "block";
-  formMessage.style.fontSize = "20px"
+  formMessage.style.fontSize = "20px";
 }
 
 function clearFormMessage() {
@@ -147,7 +147,7 @@ registerForm.addEventListener("submit", async (e) => {
     console.log(data);
 
     const msg = (data.message || "").toLowerCase();
-    
+
     // for backend errors
     if (!response.ok) {
       showFormMessage(msg);
@@ -155,7 +155,7 @@ registerForm.addEventListener("submit", async (e) => {
     }
 
     // for successful registration, otp generation  and redirecting
-    showFormMessage(msg,"success");
+    showFormMessage(msg, "success");
 
     registerForm.reset();
 
