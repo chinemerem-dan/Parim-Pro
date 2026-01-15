@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Video | Parim Pro</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="capstone2.css" />
+
+    <!-- Icons (optional – you can replace later) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <!-- 🔗 Add logo link here -->
+        <a href="#">
+          <span class="logo-box">Pd</span>
+          <span class="logo-text">Parim Pro</span>
+        </a>
+      </div>
+
+      <div class="header-icons">
+        <!-- 🔗 Notification icon link -->
+        <a href="#" class="icon">
+          <i class="fa-regular fa-bell"></i>
+        </a>
+
+        <!-- 🔗 Profile icon link -->
+        <a href="#" class="icon">
+          <i class="fa-regular fa-user"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+      <div class="title-bar">Add Video</div>
+
+      <form id="videoForm" class="form">
+        <label>Add Title</label>
+        <input type="text" id="title" placeholder="Enter video title" />
+
+        <label>Add Subtitle</label>
+        <input type="text" id="subtitle" placeholder="Enter subtitle" />
+
+        <label>Add Video Link</label>
+        <input type="url" id="videoLink" placeholder="Paste video link" />
+
+        <button type="submit" class="upload-btn">Upload</button>
+      </form>
+    </main>
+
+    <!-- JS -->
+    <script src="capstone2.js"></script>
+  </body>
+</html>

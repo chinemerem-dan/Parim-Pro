@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #ffffff;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #6a0d45;
+}
+
+.logo-box {
+  background: #6a0d45;
+  color: white;
+  font-weight: bold;
+  padding: 6px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.header-icons .icon {
+  margin-left: 20px;
+  font-size: 20px;
+  color: #6a0d45;
+  text-decoration: none;
+}
+
+/* MAIN */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.title-bar {
+  background: #6a0d45;
+  color: white;
+  padding: 18px;
+  font-size: 26px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.form input {
+  background: #e0e0e0;
+  border: none;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.form input:focus {
+  outline: none;
+  background: #d6d6d6;
+}
+
+/* BUTTON */
+.upload-btn {
+  background: #6a0d45;
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.upload-btn:hover {
+  opacity: 0.9;
+}

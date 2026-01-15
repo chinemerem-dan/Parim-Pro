@@ -52,6 +52,18 @@ text-align: center;
 
   
 }
+ .menu-toggle {
+    display: block;
+    z-index: 1001; 
+  }
+
+  .menu-toggle img {
+    width: 35px;
+    position: absolute;
+    top:25%;
+    left: 180px;
+  }
+
 
 .hero-icons span{
   cursor: pointer;
@@ -116,17 +128,6 @@ text-decoration: none;
   margin: 0;
   display: inline; 
 }
- .menu-toggle {
-    display: block;
-    z-index: 1001; 
-  }
-
-  .menu-toggle img {
-    width: 35px;
-    position: absolute;
-    top:25%;
-    left: 180px;
-  }
 
 /* STATS */
 .stats{
@@ -284,9 +285,8 @@ footer {
   margin-bottom: 20px;
 }
 
-/* =======================
-   RESPONSIVE — MAX 768px
-======================= */
+/* 
+   RESPONSIVE — MAX 768px */
 @media (max-width: 768px) {
   
   /* GENERAL RESET */
@@ -299,7 +299,7 @@ footer {
 /* HERO CARD */
 
 .hero{
-  height: 50vh;
+  height: 45vh;
 }
 .hero-content{
   position:relative;
@@ -323,28 +323,28 @@ footer {
 }
 .notification-icon{
   position: absolute;
-  top: 17%;
-left: 150px;
+  top: 19%;
+left: 250px;
   width: -50px;
 
   
 }
 
-.hero-icons span{
+.hero-icons a{
 justify-content:center;
 width: -20px;
-  cursor:none;
   margin-right: 200px;
 }
 
  .hero-icons img{
-  width: 15px;
+  width: 20px;
+  
  }
 
 
   /* USER ROW */
   .user-row {
-    margin: -20px 10px 0 10px;
+    margin: 20px 10px 0 10px;
   }
 
   /* SEARCH */
@@ -359,19 +359,18 @@ width: -20px;
 .search p {
   font-size: 10px;
   margin-right: 10px;
+  text-align: center;
 }
 .search-icon {
  
   width: 15px;
 }
   /* MENU ICONS */
-   .menu-toggle {
-    display: block;
-    z-index: 1001; 
-  }
-
-  .menu-toggle img {
-    width: 25px;
+ .menu-toggle img {
+    width: 20px;
+    position: absolute;
+    top:21%;
+    left: 200px;
   }
 
 

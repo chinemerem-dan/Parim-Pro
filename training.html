@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parim Pro</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#6b0f3f",
+              card: "#f3f3f3",
+              pink: "#e91e63",
+              green: "#4caf50",
+              blue: "#2196f3",
+              red: "#f44336",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-white">
+    <!-- HEADER  -->
+    <header class="flex justify-between items-center px-8 py-4">
+      <a href="#">
+        <img
+          src="/images/Frame_3-removebg-preview 3 (1).png"
+          alt="Parim Pro"
+          class="h-30"
+        />
+      </a>
+
+      <div class="flex gap-10">
+       <a href="/notification.html">  <img
+          src="/images/mdi_bell-notification-outline (1).png"
+          class="w-15 h-15"
+        /></a>
+    <a href="/profile.html">    <img
+          src="/images/pajamas_profile (2).png"
+          class="w-10 h-10"
+        /></a>
+         <img 
+          src="/images/Vector (4).png"
+          alt="Menu"
+          class="w-8 h-8 pt-2 menu-toggle"
+        />
+      </div>
+    </header>
+    <!-- ================= HERO IMAGE ================= -->
+    <section class="px-8 mt-2">
+      <!-- HERO IMAGE -->
+      <img
+        src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768169524/Rectangle_205_1_hhbepo.png"
+        alt="Event Banner"
+        class="w-full rounded-xl object-cover h-[220px] sm:h-[300px] md:h-[360px] lg:h-[400px]"
+      />
+
+   
+    </section>
+
+    <!-- ================= STATISTICS ================= -->
+    <section class="px-8 mt-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- TOTAL EVENT -->
+        <div class="relative bg-card rounded-lg px-6 py-5 shadow-md">
+          <img
+            src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768168558/uim_analysis_xz5god.svg"
+            class="absolute top-3 right-3 w-4 h-4"
+          />
+
+          <div class="flex items-center gap-4">
+            <div class="bg-pink rounded-lg p-3">
+              <img
+                src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768168929/mdi_calendar_zfyfll.svg"
+                class="w-8 h-8"
+              />
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Total Event</p>
+              <p class="font-semibold"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOTAL STAFF -->
+        <div class="relative bg-card rounded-lg px-6 py-5 shadow-md">
+          <img
+            src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768168558/uim_analysis_xz5god.svg"
+            class="absolute top-3 right-3 w-4 h-4"
+          />
+
+          <div class="flex items-center gap-4">
+            <div class="bg-green rounded-lg p-3">
+              <img
+                src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768168929/pajamas_profile_1_fncacs.svg"
+                class="w-8 h-8"
+              />
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Total Staff</p>
+              <p class="font-semibold"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANALYSIS -->
+        <div class="relative bg-card rounded-lg px-6 py-5 shadow-md">
+          <img
+            src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768168558/uim_analysis_xz5god.svg"
+            class="absolute top-3 right-3 w-4 h-4"
+          />
+
+          <div class="flex items-center gap-4">
+            <div class="bg-blue rounded-lg p-3">
+              <img
+                src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768168929/ix_analysis_emmqp9.svg"
+                class="w-8 h-8"
+              />
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Analysis</p>
+              <p class="font-semibold"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRAINING -->
+        <div class="relative bg-card rounded-lg px-6 py-5 shadow-md">
+          <img
+            src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768168558/uim_analysis_xz5god.svg"
+            class="absolute top-3 right-3 w-4 h-4"
+          />
+
+          <div class="flex items-center gap-4">
+            <div class="bg-red rounded-lg p-3">
+              <img
+                src="https://res.cloudinary.com/dkhb2aic4/image/upload/v1768168928/mdi_video-outline_kdenxk.svg"
+                class="w-8 h-8"
+              />
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Training</p>
+              <p class="font-semibold"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIDEO HEADER ================= -->
+    <section class="bg-brand mt-10 px-8 py-4 flex justify-between items-center">
+      <p class="text-white font-medium">List of Uploaded Videos</p>
+
+      <a href="capstone2.html">
+        <button
+          class="bg-white text-brand px-6 py-2 rounded-full text-sm font-semibold"
+        >
+          Upload
+        </button>
+      </a>
+    </section>
+
+    <!-- ================= VIDEOS ================= -->
+    <section class="px-8 py-14">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10"
+      >
+        <a href="#" class="block">
+          <img
+            src="VIDEO_THUMBNAIL_SRC"
+            class="rounded-xl h-48 w-full object-cover"
+          />
+          <h3 class="mt-4 font-semibold text-sm leading-snug">
+            Introduction to Culinary Terms
+          </h3>
+          <p class="text-xs text-gray-500 mt-1">Optional description</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-brand text-white text-center py-4">
+      All right reserved © Parim Pro 2026
+    </footer>
+    <script src="/parim-pro/js/training.js"></script>
+  </body>
+</html>
