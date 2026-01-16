@@ -4,7 +4,7 @@ const sidebar = document.querySelector('.sidebar');
 
 
 toggleBtn.addEventListener('click',()=>{
-window.location.href= "/dashboard.html";
+window.location.href= "dashboard.html";
 });
 // DATA SOURCE (FROM BACKEND LATER)
 

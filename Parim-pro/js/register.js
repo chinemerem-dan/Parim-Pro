@@ -160,7 +160,7 @@ registerForm.addEventListener("submit", async (e) => {
     registerForm.reset();
 
     setTimeout(() => {
-      window.location.href = "/otp.html";
+      window.location.href = "otp.html";
     }, 1500);
   } catch (error) {
     showFormMessage(data.error.details);

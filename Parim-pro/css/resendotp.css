@@ -1,0 +1,134 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 12px;
+  display: flex;
+  position: relative;
+  color: #fff;
+  background-color: #620a45;
+  padding: 40px 20px; 
+}
+
+.card {
+    width: 100%;
+     max-width: 500px;
+    padding: 25px;
+  border-radius: 15px;
+  min-height: 40vh;
+  width: 100%;
+  transition: 0.3s ease;
+  text-align: center;
+  background: #fff;
+  
+  
+}
+h1{
+    text-align: center;
+    margin-bottom:20px;
+    font-size: 28px;
+    color: #620a45;
+    margin-top: -170px;
+}
+.Enter{
+    font-size: 18px;
+    text-align: center;
+      min-height: 80px;
+      color: #620a45;
+}
+
+.card img {
+  margin-top: -150px;
+  width: 300px;
+  max-width: 50%;
+}
+
+.form-message label{
+    color: #620a45;
+    font-size: 15px;
+    
+    
+}
+.form-message {
+text-align: left;
+border-bottom: solid #d9d9d9 3px;
+
+
+}
+
+
+
+input {
+  display: block;
+  width: 100%; 
+  max-width: 1000px; 
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 600px 20px 0;
+  border-radius: 10px;
+}
+
+
+
+.error {
+  color: red;
+  margin: 0px 0px 20px 0px;
+  display:none;
+}
+
+button {
+  padding: 10px 30px;
+  display: block;
+  margin: 30px auto 10px 300px; 
+  cursor: pointer;
+  background: #620a45;
+  color: #fff;
+  font-weight: 200;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: #fff;
+  color: #620a45;
+  box-shadow: 0 0 25px;
+  
+} 
+
+/* --- RESPONSIVE SECTION (MAX 768px) --- */
+@media screen and (max-width: 768px) {
+   
+  .card {
+    width: 100%;
+    
+    padding: 40px 20px;
+  }
+  .card img{
+    margin-top: -100px;
+  }
+  h1{
+   
+    font-size: 18px;
+    margin-top: -100px;
+   
+}
+.Enter{
+    font-size: 13px;
+   
+}button {
+  padding: 5px 5px;
+ font-size: 8px;
+  margin: 30px auto 10px 200px; 
+  font-weight: 50;
+  border-radius: 2px;
+}
+
+}

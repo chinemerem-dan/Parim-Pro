@@ -1,0 +1,76 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f1f1f1;
+  margin:0;
+  padding:0;
+}
+
+
+
+
+.header{
+     display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #6A0D45;
+  color: #f1f1f1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-left:200px;
+padding-right: 200px;
+align-items: center;
+text-align: center;
+}
+/* WHITE CARD SECTIONS */
+.profile-card,
+.account-settings{
+  background:#ffffff;
+  padding:18px;
+  margin-top:15px;
+  border-radius:12px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Profile text */
+.profile-card p{
+  margin:7px 0;
+  font-size:16px;
+}
+
+/* Section Titles */
+.account-settings h3,
+.profile-title{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+/* Account Setting Items */
+.account-settings ul{
+  list-style:none;
+  padding-left:0;
+}
+
+.account-settings li{
+  background:#f3f3f3;
+  padding:12px;
+  border-radius:8px;
+  margin-top:8px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.account-settings li:hover{
+  background:#ddd;
+}
+
+/* Footer Purple Bar */
+footer{
+  background:#6A0D45;
+  color:white;
+  text-align:center;
+  padding:18px;
+  border-radius:15px;
+  margin-top:25px;
+}

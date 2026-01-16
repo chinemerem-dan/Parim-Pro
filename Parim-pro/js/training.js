@@ -3,7 +3,7 @@ const sidebar = document.querySelector('.sidebar');
 
 
 toggleBtn.addEventListener('click',()=>{
-window.location.href= "/dashboard.html";
+window.location.href= "dashboard.html";
 });
 
 const uploadBtn = document.getElementById("uploadBtn");
