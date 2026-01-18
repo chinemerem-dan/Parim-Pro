@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+/* PASSWORD WRAPPER */
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.toggle-password:hover {
+  color: #620A45;
+}
+
+body {
+  background: #FFFF;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 80vh;
+    background: #620A45 url("/images/c42c1d31b55fc6c02a8c5843b86024bcff88ff5d.jpg") center/cover no-repeat; 
+  color: #fff;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(94, 16, 52, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: -300px;
+  font-family:url;
+  margin-top: -150px;
+ 
+  
+  
+}
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+.ph1{
+  text-align: center;
+
+}
+
+/* HOW IT WORKS */
+.how-it-works {
+  background: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-top: -5px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  
+}
+.step1{
+  margin-top:-5px;
+}
+.icon {
+  font-size: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.icon img{
+  width: 30px;
+}
+
+/* IMAGE SECTION */
+.image-section {
+  position: relative;
+  height: 100vh;
+  background: #620A45 url("/images/7e20789a2051159a15da809bb7464ef03efe1f99.jpg") center/cover no-repeat;
+  margin-top: 50px;
+}
+
+.image-section .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(94, 16, 52, 0.6);
+}
+
+/* LOGIN */
+.login-section {
+  padding: 30px 20px;
+  background: #fff;
+  height: 80vh;
+  
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border: none;
+  
+  background: #eee;
+  font-size: 0.9rem;
+}
+.div-btn{
+  text-align: center;
+}
+button {
+  width: 60%;
+  padding: 12px;
+  background: #5e1034;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  margin-bottom: 15px;
+}
+
+.login-section p{
+  
+    color:#000;
+    
+}
+.login-section a{
+    color: #620A45;}
+
+button:hover {
+  background:#fff;
+  border-color: #620A45;
+  border-style: solid;
+  border-width: 2px;
+  color: #620A45;
+
+}
+
+.error-text {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  color: #d32f2f; 
+}
+.input-error {
+  border: 1px solid red !important;
+}
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 42px 12px 12px; /* space for eye */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.forgotPassword{
+  margin-left: 450px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.forgotPassword:hover{
+  color: #620A45;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero{
+    height: 50vh;
+  }
+.hero h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+ 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: -10px;
+  font-family:url;
+  margin-top: -50px;
+  margin-bottom: 20px;
+ 
+  
+  
+}
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  font-weight: 100;
+}
+.ph1{
+margin-top: -50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.step {
+  
+font-size: 10px;
+  
+}
+.step img{
+  width: 15px;
+}
+.step p{
+  font-size: 10px;
+}
+  .steps {
+    gap: 20px;
+   justify-content: center;
+   align-items: center;
+  }
+  .step1{
+    margin-top: 1px;
+  }
+  .toggle-password {
+ 
+  top: 55%;
+
+}
+.forgotPassword{
+  margin-left: 200px;
+  margin-bottom: 30px;
+  font-size: 13px;
+  margin-top: -20px;
+}
+.image-section {
+ 
+  height: 50vh;
+}
+
+  button {
+  width: 60%;
+  padding: 12px;
+  background: #5e1034;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  margin-bottom: 15px;
+}
+}
